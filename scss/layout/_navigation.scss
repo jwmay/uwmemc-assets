@@ -58,6 +58,7 @@
   // Smaller menu size and spacing on smaller displays.
   top: -30px;
   height: 480px;
+  width: 250px;
   padding-top: 130px;
   padding-left: 90px;
     
@@ -65,6 +66,7 @@
   @include breakpoint(medium) {
     top: -60px;
     height: 600px;
+    width: 300px;
     padding-top: 180px;
     padding-left: 80px;
   }
