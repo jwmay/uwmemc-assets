@@ -1,0 +1,163 @@
+////
+// Login page styles.
+//
+// The set of CSS below restyles the default WordPress login page based on the
+// WordPress Codex: http://codex.wordpress.org/Customizing_the_Login_Form
+////
+body.login {
+  display: flex;
+  position: relative;
+  height: auto;
+  min-height: 100vh;
+  padding: ($base * 3) 0;
+
+	@include breakpoint(medium) {
+    &:after {
+		  background: url('../img/backgrounds/solar-panel-gradient.png') no-repeat center center fixed;
+      background-size: cover;
+      opacity: 0.2;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      content: '';
+    }
+	}
+
+  // Style the login form container.
+	div#login {
+    border-radius: 100%;
+    background-color: #fff;
+    padding: ($base * 4);
+    width: 100%;
+		
+		@include breakpoint(medium) {
+      padding: ($base * 12);
+      width: ($base * 75);
+      height: ($base * 75);
+      box-shadow: 0 4px 20px 8px $medium-gray;
+		}
+
+    // Add custom logo and control logo sizing.
+		h1 {
+			a {
+        background-image: url('../img/branding/uwmemc-logo.png');
+				background-size: auto 80px;
+        width: auto;
+        margin: 0;
+
+        &:hover {
+          border: none;
+        }
+		    	
+        [data-whatinput="mouse"] &:focus {
+          box-shadow: none;
+        }
+			}
+		}
+
+    // Style messages displayed to the user.
+    p.message,
+    div#login_error {
+      padding: ($base * 2);
+      padding-bottom: 0;
+      margin: 0;
+			border: none;
+      box-shadow: none;
+      font-size: ($base * 2);
+		}
+
+    // Style alerts displayed to the user.
+		div#login_error {
+			// .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+		}
+
+		// Control the size of the login form.
+		form#loginform,
+		form#lostpasswordform,
+		form#resetpassform {
+			box-shadow: none;
+			margin-top: 0;
+      margin-bottom: -40px;
+      padding-top: ($base * 2);
+			
+			p {
+				label {
+          color: $body-font-color;
+					font-size: ($base * 2);
+					font-weight: $global-weight-bold;
+					width: 100%;
+				}
+			}
+			
+			// Style form inputs.
+			input#user_login,
+			input#user_pass {
+        color: $primary-color;
+				font-size: ($base * 2.5);
+				border: none;
+				border-bottom: 1px solid #ccc;
+				box-shadow: none;
+				background: none;
+				
+				&:active,
+				&:focus {
+					border: none;
+					// border-bottom: 2px solid @brand-primary;
+					outline: none;
+					box-shadow: none;
+					height: 38px;
+					margin-bottom: 15px;
+				}
+			
+				&:disabled {
+					background-color: #fff;
+					color: #ccc;
+				}				
+			}
+						
+			// Hide the remember me box.
+			p.forgetmenot {
+        display: none;
+			}
+			
+			// Format the submit button.
+			p.submit {
+				input#wp-submit {
+          @include button-base;
+          @include button-primary;
+          font-size: ($base * 2);
+          width: 100%;
+				}
+			}
+		}
+		
+		// Hide the 'Back to blog' link.
+		p#backtoblog {
+			a {
+				display: none;
+			}
+		}
+		
+		// Style navigation links at bottom of login form.
+		p#nav {
+      margin-top: 10px;
+      text-align: center;
+    		
+			a {
+        color: $primary-color;
+        transition: none;
+				
+				&:hover {
+					color: $alert-color;
+        }
+        
+        [data-whatinput="mouse"] &:focus {
+          box-shadow: none;
+        }
+			}
+		}
+	}
+}
