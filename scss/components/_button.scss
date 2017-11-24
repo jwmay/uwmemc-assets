@@ -4,17 +4,17 @@
 
 // Base button styles for formatting all buttons.
 @mixin button-base {
-  padding: $base * 2 $base * 3;
+  @include disable-mouse-outline;
+  padding: ($base * 2) ($base * 3);
   border-radius: 100px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: $base * 0.5;
+  letter-spacing: ($base * 0.5);
   cursor: pointer;
 }
 
 // Button filled with primary color.
-.btn-primary {
-  @include button-base;
+@mixin button-primary {
   @include button(false, $primary-color, $alert-color, $white, solid);
 
   &:hover {
@@ -23,13 +23,25 @@
 }
 
 // Hollow button with primary color.
-.btn-primary-hollow {
-  @include button-base;
+@mixin button-primary-hollow {
   @include button(false, $primary-color, $alert-color, $white, hollow);
 
   &:hover {
     color: $alert-color;
     border-color: $alert-color;
     animation: multicolorText 1s linear, multicolorBorder 1s linear;
+  }
+}
+
+
+.btn {
+  @include button-base;
+  
+  .btn-primary {
+    @include button-primary;
+  }
+  
+  .btn-primary-hollow {
+    @include button-primary-hollow;
   }
 }
