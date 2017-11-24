@@ -106,6 +106,7 @@ p {
 
 // Base styles for links.
 a {
+  @include disable-mouse-outline;
   font-size: inherit;
   line-height: inherit;
   color: $primary-color;
