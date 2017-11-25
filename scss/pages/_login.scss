@@ -28,15 +28,18 @@ body.login {
 
   // Style the login form container.
 	div#login {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
     border-radius: 100%;
     background-color: #fff;
     padding: ($base * 4);
-    width: 100%;
+		width: 100%;
 		
 		@include breakpoint(medium) {
-      padding: ($base * 12);
-      width: ($base * 75);
-      height: ($base * 75);
+      padding: ($base * 10);
+      width: ($base * 80);
+      height: ($base * 80);
       box-shadow: 0 4px 20px 8px $medium-gray;
 		}
 
@@ -71,7 +74,10 @@ body.login {
 
     // Style alerts displayed to the user.
 		div#login_error {
-			// .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+			@include alert-base;
+			@include alert-error;
+			margin: 0;
+			margin-top: ($base * 2);
 		}
 
 		// Control the size of the login form.
@@ -81,7 +87,8 @@ body.login {
 			box-shadow: none;
 			margin-top: 0;
       margin-bottom: -40px;
-      padding-top: ($base * 2);
+			padding-top: ($base * 2);
+			background: transparent;
 			
 			p {
 				label {
@@ -95,27 +102,19 @@ body.login {
 			// Style form inputs.
 			input#user_login,
 			input#user_pass {
-        color: $primary-color;
-				font-size: ($base * 2.5);
-				border: none;
-				border-bottom: 1px solid #ccc;
+				@include base-input;
+
+				// The following overrides WordPress defaults.
 				box-shadow: none;
-				background: none;
-				
-				&:active,
+				border: 3px solid $light-gray;
+				background-color: $light-gray;
+				color: $primary-color;
+				transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 				&:focus {
-					border: none;
-					// border-bottom: 2px solid @brand-primary;
-					outline: none;
 					box-shadow: none;
-					height: 38px;
-					margin-bottom: 15px;
+					border-color: $primary-color;
+					background-color: $white;
 				}
-			
-				&:disabled {
-					background-color: #fff;
-					color: #ccc;
-				}				
 			}
 						
 			// Hide the remember me box.
