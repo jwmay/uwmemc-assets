@@ -436,11 +436,11 @@ $input-line-height: $global-lineheight;
 $input-background: $light-gray; // custom
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
-$input-border: 1px solid $light-gray; // custom
-$input-border-focus: 1px solid lighten($primary-color, 10%); // custom
+$input-border: 3px solid $light-gray; // custom
+$input-border-focus: 3px solid $primary-color; // custom
 $input-padding: $form-spacing / 2;
 $input-shadow: none; // custom
-$input-shadow-focus: 0 0 5px $medium-gray;
+$input-shadow-focus: none; // custom
 $input-cursor-disabled: not-allowed;
 $input-transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; // custom
 $input-number-spinners: true;
