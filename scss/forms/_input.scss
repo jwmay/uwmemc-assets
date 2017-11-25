@@ -1,0 +1,123 @@
+////
+// Form component base styles.
+////
+
+// Fieldset styles.
+@mixin base-fieldset {
+  border-top: 4px dotted $warning-color;
+  margin-top: ($base * 6);
+  padding: 0 ($base * 2);
+
+  @include breakpoint(large) {
+    border-top: 8px dotted $warning-color;
+  }
+
+  legend {
+    margin: 0;
+    font-size: rem-calc($base * 4);
+    font-weight: $global-weight-bold;
+    padding-right: ($base * 2);
+    color: $primary-color;
+  }
+}
+
+// Input styles.
+@mixin base-input {
+  height: ($base * 6);
+  margin: ($base * 0.5) 0 ($base * 2);
+  padding: 0 ($base * 3);
+}
+
+// Textarea styles.
+@mixin base-textarea {
+  padding: ($base * 3);
+  min-height: ($base * 20);
+  border-radius: ($base * 5);
+  font-size: rem-calc(20);
+  resize: vertical;
+}
+
+// Select styles.
+@mixin base-select {
+  border-radius: 100px;
+  font-size: rem-calc(20);
+  color: $medium-gray;
+
+  // Change position and size of triangle.
+  background-size: ($base * 6) ($base * 1.5);
+
+  &[multiple] {
+    padding: ($base * 3);
+    border-radius: ($base * 5);
+  }
+}
+
+// Generate component to group radio and checkbox elements together.
+@mixin radio-group {
+  position: relative;
+  border: none;
+  background-color: $light-gray;
+  border-radius: ($base * 5);
+  padding: ($base * 2) ($base * 4);
+  margin: ($base * 6) 0 ($base * 2);
+
+  legend {
+    position: absolute;
+    top: -($base * 4);
+    left: 0;
+    font-size: rem-calc(16);
+    font-weight: $global-weight-bold;
+  }
+
+  label {
+    font-weight: $global-weight-normal;
+    margin-left: $base;
+    margin-right: ($base * 4);
+  }
+
+  input {
+    margin: 0;
+  }
+
+  // Allow radio items to be displayed inline.
+  &.inline-group .radio-item {
+    display: inline-block;
+  }
+}
+
+
+fieldset {
+  @include base-fieldset;
+}
+
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea,
+select {
+  @include base-input;
+}
+
+textarea {
+  @include base-textarea;
+}
+
+select {
+  @include base-select;
+}
+
+.radio-group,
+.checkbox-group {
+  @include radio-group;
+}

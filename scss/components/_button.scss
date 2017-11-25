@@ -6,6 +6,7 @@
 @mixin button-base {
   @include disable-mouse-outline;
   padding: ($base * 2) ($base * 3);
+  margin-right: ($base * 2);
   border-radius: 100px;
   font-weight: 600;
   text-transform: uppercase;
@@ -37,11 +38,15 @@
 .btn {
   @include button-base;
   
-  .btn-primary {
+  &.btn-primary {
     @include button-primary;
   }
   
-  .btn-primary-hollow {
+  &.btn-primary-hollow {
     @include button-primary-hollow;
+  }
+
+  &.btn-full {
+    width: 100%;
   }
 }

@@ -36,29 +36,33 @@ $(function() {
     showSearchForm();
   });
 
+
   ////
-  // Initialize the QD image slider.
+  // Initialize the QD image slider if one is present.
   ////
-  var qdSlider = new Foundation.Orbit($('.headline-slider'), {
-    animInFromLeft: 'fade-in',
-    animInFromRight: 'fade-in',
-    animOutToLeft: 'fade-out',
-    animOutToRight: 'fade-out',
-    containerClass: 'headline-slider-container',
-    slideClass: 'headline-slider-slide',
-    boxOfBullets: 'headline-slider-bullets',
-    nextClass: 'headline-slider-next',
-    prevClass: 'headline-slider-previous',
-  });
+  if ($('.headline-slider').length) {
+    var qdSlider = new Foundation.Orbit($('.headline-slider'), {
+      animInFromLeft: 'fade-in',
+      animInFromRight: 'fade-in',
+      animOutToLeft: 'fade-out',
+      animOutToRight: 'fade-out',
+      containerClass: 'headline-slider-container',
+      slideClass: 'headline-slider-slide',
+      boxOfBullets: 'headline-slider-bullets',
+      nextClass: 'headline-slider-next',
+      prevClass: 'headline-slider-previous',
+    });
+  }
+
 
   ////
   // Animation effect for the mobile nav menu toggle.
   ////
   var menuToggle = $('.header-toggle');
   menuToggle.click(function() {
-    console.log('clicked');
     $(this).toggleClass('active');
   });
+
 
   ////
   // Initialize parallax scroll background image effect.
@@ -66,5 +70,16 @@ $(function() {
   $('.parallax-scroll').parallax({
     speed: -0.2,
     sliderSelector: '>.parallax-scroll-slider',
+  });
+
+
+  ////
+  // Change color of select element once changed to allow for a placeholder
+  // color on unchanged select elements.
+  ////
+  $('select').change(function() {
+    if($(this).val !== '') {
+      $(this).css('color', '#4b2e83');
+    }
   });
 });

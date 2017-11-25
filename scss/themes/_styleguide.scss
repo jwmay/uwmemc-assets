@@ -387,6 +387,7 @@
     }
   }
 
+
   // Base styles for the parallax scroll sample section.
   .parallax-fixed-slider {
     @include parallax-fixed-slider($solar-panel-image, 0.2);
@@ -400,6 +401,16 @@
     background-color: rgba($black, 0.6);
     color: $white;
     padding: ($base * 16) ($base * 8);
+  }
+
+
+  // Base styles for the form components section.
+  .form-sample {
+    width: 100%;
+
+    @include breakpoint(large) {
+      width: 60%;
+    }
   }
 }
 
