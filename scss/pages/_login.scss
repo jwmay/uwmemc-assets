@@ -47,7 +47,8 @@ body.login {
 		h1 {
 			a {
         background-image: url('../img/branding/uwmemc-logo.png');
-				background-size: auto 80px;
+				background-size: auto ($base * 12);
+				height: ($base * 12);
         width: auto;
         margin: 0;
 
