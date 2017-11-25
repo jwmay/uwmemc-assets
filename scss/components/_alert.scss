@@ -1,0 +1,56 @@
+////
+// Alert base styles.
+////
+
+// Apply base color for an alert.
+@mixin -base-alert-colors($color) {
+  background-color: rgba($color, 0.25);
+  border-color: $color;
+  color: darken($color, 10%);
+}
+
+// Apply base sizing and spacing for an alert.
+@mixin alert-base {
+  margin-bottom: ($base * 2);
+  padding: ($base * 2) ($base * 4);
+  background-color: $light-gray;
+  border-radius: ($base * 5);
+  border: 3px solid;
+}
+
+@mixin alert-success {
+  @include -base-alert-colors($success-color);
+}
+
+@mixin alert-information {
+  @include -base-alert-colors($secondary-color);
+}
+
+@mixin alert-warning {
+  @include -base-alert-colors($warning-color);
+}
+
+@mixin alert-error {
+  @include -base-alert-colors($alert-color);
+}
+
+
+.alert {
+  @include alert-base;
+
+  &.alert-success {
+    @include alert-success;
+  }
+
+  &.alert-information {
+    @include alert-information;
+  }
+
+  &.alert-warning {
+    @include alert-warning;
+  }
+
+  &.alert-error {
+    @include alert-error;
+  }
+}
