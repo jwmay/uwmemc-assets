@@ -300,7 +300,11 @@
       }
 
       .gallery-tile {
-        @include gallery-tile;
+        @include gallery-tile(
+          $sizes: ('small': 12, 'large': 6),
+          $gutter: ($base * 5),
+          $height: ('small': rem-calc($base * 24), 'medium': rem-calc($base * 32))
+        );
 
         .tile-container {
           @include tile-container;
