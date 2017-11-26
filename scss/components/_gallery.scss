@@ -17,6 +17,11 @@
   @include container;
   @include grid;
   justify-content: space-around;
+
+  // Keep headers 100% width so they do not wrap with other flex items.
+  h1, h2, h3, h4, h5, h6 {
+    width: 100%;
+  }
 }
 
 // Generate a title for the gallery.
@@ -73,17 +78,26 @@
 
 // Generate a gallery-tile item.
 @mixin gallery-tile(
-  $sizes: ('small': 12, 'large': 6),
-  $gutter: ($base * 5)
+  $sizes: ('small': 12),
+  $gutter: 0,
+  $height: ('small': auto)
 ) {
   @include cell($sizes, $gutter);
   margin-bottom: ($gutter / 2);
   position: relative;
-  height: ($base * 24);
-
+  height: map-get($height, 'small');
+  
   @include breakpoint(medium) {
-    height: ($base * 32);
     margin-bottom: $gutter;
+    @if map-has-key($height, 'medium') {
+      height: map-get($height, 'medium');
+    }
+  }
+
+  @if map-has-key($height, 'large') {
+    @include breakpoint(large) {
+      height: map-get($height, 'large');
+    }
   }
 }
 
