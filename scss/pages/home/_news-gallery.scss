@@ -26,6 +26,7 @@
 
   .news-item-content {
     @include tile-container;
+    @include tile-container-tag-left;
   }
 
   .news-item-header {
@@ -37,11 +38,11 @@
   }
 
   .news-item-read-more {
-    @include tile-link;
+    @include tile-link($base * 3);
   }
 
   .news-item-date {
-    @include tile-tag;
+    @include tile-tag-left;
   }
 
   .date {

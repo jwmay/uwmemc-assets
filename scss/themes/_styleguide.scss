@@ -304,24 +304,36 @@
 
         .tile-container {
           @include tile-container;
-
-          .tile-header {
-            @include tile-header;
-          }
-
-          .tile-body {
-            @include tile-content;
-          }
-
-          .tile-read-more {
-            @include tile-link;
-          }
         }
 
-        .tile-tag {
-          @include tile-tag;
+        .tile-container-tag-left {
+          @include tile-container-tag-left;
         }
 
+        .tile-container-tag-right {
+          @include tile-container-tag-right;
+        }
+
+        .tile-tag-left {
+          @include tile-tag-left;
+        }
+        
+        .tile-tag-right {
+          @include tile-tag-right;
+        }
+
+        .tile-header {
+          @include tile-header;
+        }
+
+        .tile-body {
+          @include tile-content;
+        }
+
+        .tile-read-more {
+          @include tile-link;
+        }
+        
         .date {
           @include date;
 
