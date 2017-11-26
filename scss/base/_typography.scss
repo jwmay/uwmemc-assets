@@ -94,13 +94,8 @@ h6 {
 // Base styles for paragraph text.
 p {
   @include -base-typography();
-
   margin-top: 0;
   margin-bottom: ($base * 2);
-  
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 }
 
 
