@@ -31,6 +31,10 @@
   .news-item-content {
     @include tile-container;
     @include tile-container-tag-left;
+
+    p {
+      @include tile-content;
+    }
   }
 
   .news-item-header {
