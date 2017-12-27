@@ -49,4 +49,10 @@
   &.btn-full {
     width: 100%;
   }
+
+  &.btn-center {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+  }
 }

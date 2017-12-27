@@ -2,6 +2,25 @@
 // Form component base styles.
 ////
 
+// Form styles
+@mixin base-form {
+  @include cell(('small': 12, 'large': 8));
+}
+
+@mixin base-form-horizontal {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  label {
+    width: 100%;
+
+    @include breakpoint(medium) {
+      @include -cell-width(6, ($base * 3));
+    }
+  }
+}
+
 // Fieldset styles.
 @mixin base-fieldset {
   border-top: 4px dotted $warning-color;
@@ -26,6 +45,11 @@
   height: ($base * 6);
   margin: ($base * 0.5) 0 ($base * 2);
   padding: 0 ($base * 3);
+}
+
+// Invalid input styles.
+@mixin base-input-invalid {
+  border-color: $alert-color;
 }
 
 // Textarea styles.
@@ -67,6 +91,7 @@
     left: 0;
     font-size: rem-calc(16);
     font-weight: $global-weight-bold;
+    color: $black;
   }
 
   label {
@@ -85,6 +110,14 @@
   }
 }
 
+
+.form {
+  @include base-form;
+}
+
+.form-horizontal {
+  @include base-form-horizontal;
+}
 
 fieldset {
   @include base-fieldset;
@@ -107,6 +140,12 @@ fieldset {
 textarea,
 select {
   @include base-input;
+}
+
+[type='file'] {
+  background-color: $light-gray;
+  border-radius: 100px;
+  padding: ($base * 2) ($base * 3);
 }
 
 textarea {

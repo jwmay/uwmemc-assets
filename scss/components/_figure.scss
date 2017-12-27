@@ -58,3 +58,29 @@
 .img-dot {
   @include image-dot;
 }
+
+// WordPress image right alignment class
+.alignright {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: ($base * 4);
+
+  @include breakpoint(large) {
+    float: right;
+    margin-right: 0;
+    margin-left: ($base * 4);
+  }
+}
+
+// WordPress image left alignment class
+.alignleft {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: ($base * 4);
+
+  @include breakpoint(large) {
+    float: left;
+    margin-left: 0;
+    margin-right: ($base * 4);
+  }
+}

@@ -82,4 +82,16 @@ $(function() {
       $(this).css('color', '#4b2e83');
     }
   });
+
+
+  ////
+  // Remove invalidation from form elements that have changed.
+  ////
+  $('input').change(function() {
+    if($(this).hasClass('wpcf7-not-valid')) {
+      $(this).removeClass('wpcf7-not-valid');
+      $(this).siblings('.wpcf7-not-valid-tip').hide();
+    }
+    $(this).parents('.wpcf7-not-valid').siblings('.wpcf7-not-valid-tip').hide();
+  });
 });
