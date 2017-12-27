@@ -87,7 +87,7 @@ $(function() {
   ////
   // Remove invalidation from form elements that have changed.
   ////
-  $('input').change(function() {
+  $('input, textarea').change(function() {
     if($(this).hasClass('wpcf7-not-valid')) {
       $(this).removeClass('wpcf7-not-valid');
       $(this).siblings('.wpcf7-not-valid-tip').hide();

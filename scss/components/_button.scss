@@ -51,8 +51,12 @@
   }
 
   &.btn-center {
-    width: 40%;
+    width: 100%;
     display: block;
     margin: 0 auto;
+
+    @include breakpoint(medium) {
+      width: 40%;
+    }
   }
 }
