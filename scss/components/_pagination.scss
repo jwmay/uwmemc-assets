@@ -1,0 +1,75 @@
+////
+// Pagination styles.
+////
+
+// Base pagination container and item styles.
+@mixin pagination-base {
+  @include pagination-container;
+  text-align: center;
+
+  li {
+    height: ($base * 6);
+    min-width: ($base * 6);
+    line-height: ($base * 6) - 4;
+    text-align: center;
+
+    a {
+      width: 100%;
+      height: 100%;
+      border: 1px solid $medium-gray;
+      transition: transform 1s ease-in-out;
+
+      &:hover {
+        color: $white;
+        transform: scale(1.2);
+        border: 1px solid $alert-color;
+        background-color: $alert-color;
+        animation: multicolorBackground 1s linear, multicolorBorder 1s linear;
+      }
+    }
+  }
+}
+
+// Base styles for current pagination item.
+@mixin pagination-current-base {
+  @include pagination-item-current;
+  font-weight: $global-weight-bold;
+}
+
+// Base styles for disabled pagination item.
+@mixin pagination-disabled-base {
+  @include pagination-item-disabled;
+}
+
+// Base styles for pagination ellipsis.
+@mixin ellipsis-base {
+  @include pagination-ellipsis;
+
+  .dot {
+    min-width: $base;
+    height: $base;
+    margin: ($base * 5/2) 0;
+    background-color: $primary-color;
+    display: inline-block;
+    border-radius: 100%;
+    position: relative;
+    top: 18px;
+  }
+}
+
+
+.pagination {
+  @include pagination-base;
+
+  .current {
+    @include pagination-current-base;
+  }
+
+  .disabled {
+    @include pagination-disabled-base;
+  }
+  
+  .ellipsis {
+    @include ellipsis-base;
+  }
+}
