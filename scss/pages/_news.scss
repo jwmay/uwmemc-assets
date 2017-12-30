@@ -1,0 +1,79 @@
+////
+// News page styles.
+////
+.gallery-news-card {
+  display: block;
+  width: 100%;
+  padding-bottom: ($base * 8);
+  border-bottom: 4px dotted $warning-color;
+  margin-bottom: ($base * 4);
+
+  @include breakpoint(large) {
+    display: flex;
+    align-items: center;
+    width: 80%;
+  }
+
+  .news-card-image {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: ($base * 3);
+
+    @include breakpoint(large) {
+      margin-right: ($base * 6);
+      margin-bottom: 0;
+    }
+
+    img {
+      border-radius: 100%;
+      max-width: none;
+      width: 200px;
+      height: 200px;
+      box-shadow: 3px 3px 10px 3px $medium-gray;
+    }
+  }
+
+  .news-card-header {
+    @include tile-header;
+  }
+}
+
+.news-date,
+.news-card-date {
+  display: flex;
+  flex-flow: row nowrap;
+  
+  .date-month,
+  .date-year {
+    @include date-month;
+    margin-left: $base;
+    font-size: ($base * 2.5);
+
+    @include breakpoint(medium) {
+      font-size: ($base * 3);
+    }
+  }
+
+  .date-day {
+    @include date-day;
+    width: ($base * 4);
+    height: ($base * 4);
+    line-height: ($base * 4);
+    font-size: ($base * 2);
+    
+    @include breakpoint(medium) {
+      width: ($base * 5);
+      height: ($base * 5);
+      line-height: ($base * 5);
+      font-size: ($base * 2.5);
+    }
+  }
+}
+
+.news-pagination {
+  width: 100%;
+
+  @include breakpoint(large) {
+    width: 80%;
+  }
+}
