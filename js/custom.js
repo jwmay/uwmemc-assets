@@ -94,4 +94,10 @@ $(function() {
     }
     $(this).parents('.wpcf7-not-valid').siblings('.wpcf7-not-valid-tip').hide();
   });
+
+
+  ////
+  // Hide WordPress generated ellipsis on pagination.
+  ////
+  $('.page-numbers.dots').html('-');
 });
