@@ -33,7 +33,7 @@
   margin-top: ($base * 2);
 }
 
-@mixin image-dot {
+@mixin img-dot {
   border-radius: 100%;
   box-shadow: 0 4px 16px 2px rgba(0, 0, 0, 0.4);
 }
@@ -56,7 +56,7 @@
 }
 
 .img-dot {
-  @include image-dot;
+  @include img-dot;
 }
 
 // WordPress image right alignment class
