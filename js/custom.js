@@ -1,47 +1,57 @@
 $(function() {
   ////
-  // Expanding search bar in header.
+  // Expanding search bar in header
   ////
   var $search_toggle = $('#searchToggle');
   var $search_form = $('#searchForm');
 
+  ////
   // Function for displaying the search form. Expands the form and
-  // hide the search form toggle.
+  // hide the search form toggle
+  ////
   var showSearchForm = function() {
     $search_toggle.css('visibility', 'hidden');
     $search_form.addClass('expanded').focus();
   };
 
+  ////
   // Function for hiding the search form. Contracts the form and
-  // shows the search form toggle.
+  // shows the search form toggle
+  ////
   var hideSearchForm = function() {
     $search_toggle.css('visibility', 'visible');
     $search_form.removeClass('expanded');
   };
   
-  // Show the search bar if the search form toggle is clicked.
+  ////
+  // Show the search bar if the search form toggle is clicked
+  ////
   $search_toggle.click(function() {
     showSearchForm();
   });
   
-  // Hide the search bar only if no text has been entered.
+  ////
+  // Hide the search bar only if no text has been entered
+  ////
   $search_form.blur(function() {
     if(!this.value) {
       hideSearchForm();
     }
   });
   
-  // Show the search bar when input is focused (for accessability).
+  ////
+  // Show the search bar when input is focused (for accessability)
+  ////
   $search_form.focus(function() {
     showSearchForm();
   });
 
 
   ////
-  // Initialize the QD image slider if one is present.
+  // Initialize the QD image slider if one is present
   ////
   if ($('.headline-slider').length) {
-    var qdSlider = new Foundation.Orbit($('.headline-slider'), {
+    var qd_slider = new Foundation.Orbit($('.headline-slider'), {
       animInFromLeft: 'fade-in',
       animInFromRight: 'fade-in',
       animOutToLeft: 'fade-out',
@@ -56,16 +66,16 @@ $(function() {
 
 
   ////
-  // Animation effect for the mobile nav menu toggle.
+  // Animation effect for the mobile nav menu toggle
   ////
-  var menuToggle = $('.header-toggle');
-  menuToggle.click(function() {
+  var menu_toggle = $('.header-toggle');
+  menu_toggle.click(function() {
     $(this).toggleClass('active');
   });
 
 
   ////
-  // Initialize parallax scroll background image effect.
+  // Initialize parallax scroll background image effect
   ////
   $('.parallax-scroll').parallax({
     speed: -0.2,
@@ -75,7 +85,7 @@ $(function() {
 
   ////
   // Change color of select element once changed to allow for a placeholder
-  // color on unchanged select elements.
+  // color on unchanged select elements
   ////
   $('select').change(function() {
     if($(this).val !== '') {
@@ -85,7 +95,7 @@ $(function() {
 
 
   ////
-  // Remove invalidation from form elements that have changed.
+  // Remove invalidation from form elements that have changed
   ////
   $('input, textarea').change(function() {
     if($(this).hasClass('wpcf7-not-valid')) {
@@ -97,7 +107,18 @@ $(function() {
 
 
   ////
-  // Hide WordPress generated ellipsis on pagination.
+  // Hide WordPress generated ellipsis on pagination
+  //
+  // The original text is replaced with a hyphen to avoid positioning issues
+  // when the element has no content. The hyphen is masked by an overlaping
+  // image.
   ////
   $('.page-numbers.dots').html('-');
+
+
+  ////
+  // Replace the default loader for The Events Calendar plugin
+  ////
+  var loader_url = '//localhost:3000/wordpress/wp-content/themes/uwmemc/dist/assets/img/icons/loader.gif';
+  $('img.tribe-events-spinner-medium').attr('src', loader_url);
 });
