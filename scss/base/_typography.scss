@@ -1,8 +1,8 @@
 ////
-// Base typography styles.
+// Base typography styles
 ////
 
-// Mixin for applying base font size and line height.
+// Mixin for applying base font size and line height
 @mixin -base-typography {
   font-size: ($base * 2);
   line-height: ($base-unit * 2 / 10);
@@ -13,14 +13,35 @@
   }
 }
 
+// Base styles for links.
+@mixin base-link {
+  @include disable-mouse-outline;
+  font-size: inherit;
+  line-height: inherit;
+  color: $primary-color;
+  font-weight: 600;
+  text-decoration: none;
 
-// Base styles for the body. 
+  &:hover {
+    color: $alert-color;
+    animation: multicolorText 1s linear;
+    border-bottom: 2px dotted;
+
+    @include breakpoint(medium) {
+      border-bottom: 4px dotted;
+    }
+  }
+}
+
+
+
+// Base styles for the body
 body {
   @include -base-typography();
 }
 
 
-// Base styles for headers.
+// Base styles for headers
 h1,
 h2,
 h3,
@@ -91,7 +112,7 @@ h6 {
 }
 
 
-// Base styles for paragraph text.
+// Base styles for paragraph text
 p {
   @include -base-typography();
   margin-top: 0;
@@ -99,22 +120,13 @@ p {
 }
 
 
-// Base styles for links.
+// Base styles for links
 a {
-  @include disable-mouse-outline;
-  font-size: inherit;
-  line-height: inherit;
-  color: $primary-color;
-  font-weight: 600;
-  text-decoration: none;
+  @include base-link;
+}
 
-  &:hover {
-    color: $alert-color;
-    animation: multicolorText 1s linear;
-    border-bottom: 2px dotted;
 
-    @include breakpoint(medium) {
-      border-bottom: 4px dotted;
-    }
-  }
+// Base styles for strong
+b, strong {
+  font-weight: $global-weight-bold;
 }
