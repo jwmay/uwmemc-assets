@@ -110,6 +110,35 @@
   }
 }
 
+// Base styles for a Foundation input element
+@mixin base-input-zf {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.8125rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem;
+  border: 3px solid $light-gray;
+  border-radius: 100px;
+  background-color: $light-gray;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #4b2e83;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    border: 3px solid $primary-color;
+    background-color: $white;
+    box-shadow: none;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+}
+
 
 .form {
   @include base-form;
