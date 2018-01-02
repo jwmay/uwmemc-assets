@@ -90,7 +90,8 @@
 @import 'base/typography';
 
 // Forms
-@import 'forms/forms';
+@import 'forms/input';
+@import 'forms/search';
 
 // Layout
 @import 'layout/header';
@@ -102,6 +103,7 @@
 // Components
 @import 'components/alert';
 @import 'components/banner';
+@import 'components/breadcrumbs';
 @import 'components/button';
 @import 'components/dot-slider';
 @import 'components/figure';
@@ -109,7 +111,10 @@
 @import 'components/pagination';
 
 // Pages
-@import 'pages/pages';
+@import 'pages/home/home';
+@import 'pages/login';
+@import 'pages/news';
+@import 'pages/people';
 
 // Themes
 @import 'themes/styleguide';
