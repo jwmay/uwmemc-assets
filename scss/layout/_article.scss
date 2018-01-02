@@ -1,7 +1,7 @@
 ////
 // Article base styles.
 ////
-@mixin article {
+@mixin article-base {
   @include container;
   margin-bottom: ($base * 10);
   width: 100%;
@@ -13,7 +13,7 @@
   }
 }
 
-@mixin article-section {
+@mixin article-section-base {
   display: flex;
   flex-flow: column nowrap;
 
@@ -30,9 +30,9 @@
 
 
 .article {
-  @include article;
+  @include article-base;
 }
 
 .article-section {
-  @include article-section;
+  @include article-section-base;
 }
