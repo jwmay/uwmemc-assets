@@ -19,6 +19,7 @@
     a {
       @include -base-typography;
       @include base-link;
+      background-color: $white;
       border-radius: 0;
       min-height: 0;
       width: auto;
