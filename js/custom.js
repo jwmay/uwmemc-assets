@@ -119,6 +119,6 @@ $(function() {
   ////
   // Replace the default loader for The Events Calendar plugin
   ////
-  var loader_url = '//localhost:3000/wordpress/wp-content/themes/uwmemc/dist/assets/img/icons/loader.gif';
+  var loader_url = 'http://depts.washington.edu/uwmemc/wordpress/wp-content/themes/uwmemc/dist/assets/img/icons/loader.gif';
   $('img.tribe-events-spinner-medium').attr('src', loader_url);
 });
