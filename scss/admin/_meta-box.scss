@@ -1,0 +1,55 @@
+////
+// Styles for WordPress admin meta boxes
+////
+.uwmemc-meta-box {
+  padding: ($base * 2);
+
+  // #side-sortables is used throughout to add styles
+  // for when the meta box is shown in the side bar
+  #side-sortables & {
+    padding: 0;
+  }
+
+  .input-group {
+    margin-bottom: ($base * 2);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    label {
+      font-weight: $global-weight-bold;
+      font-size: ($base * 2);
+      display: inline-block;
+      width: 12%;
+
+      svg {
+        margin: 0 $base;
+      }
+
+      #side-sortables & {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    input[type="text"] {
+      font-size: ($base * 2);
+      line-height: ($base * 3);
+      width: 30%;
+
+      #side-sortables & {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    select {
+      width: 30%;
+
+      #side-sortables & {
+        width: 100%;
+      }
+    }
+  }
+}

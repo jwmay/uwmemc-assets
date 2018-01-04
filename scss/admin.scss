@@ -1,0 +1,16 @@
+/**
+ * UW MEM-C Admin Styles
+ * Version 1.0.0
+ * http://www.psystardesigns.com
+ * Licensed under MIT Open Source
+ * Uses Foundation for Sites by ZURB Version 6.4.3
+ */
+@charset 'utf-8';
+
+// ZURB Foundation files and components
+@import 'settings';
+@import 'foundation';
+
+// UWMEMC files and components
+@import 'abstracts/variables';
+@import 'admin/meta-box';

@@ -1,0 +1,9 @@
+////
+// Styles for the TinyMCE editor used in WordPress admin
+////
+
+// Add padding to the body of the editor
+// !important needed to override body.wp-autoresize styles that used !important
+body#tinymce.mce-content-body {
+  padding: ($base * 4) !important;
+}
