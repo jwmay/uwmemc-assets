@@ -44,9 +44,9 @@
     }
 
     img {
+      @include img-dot;
       height: 100%;
       width: auto;
-      border-radius: 100%;
     }
   }
 
@@ -76,8 +76,7 @@
 
     .spacer {
       height: 100%;
-      margin-left: $base;
-      margin-right: ($base * 1.75);
+      margin: 0 ($base * 1.75);
       border-left: 2px dotted $primary-color;
       
       @include breakpoint(medium) {
