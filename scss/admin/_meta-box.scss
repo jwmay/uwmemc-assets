@@ -33,21 +33,14 @@
       }
     }
 
-    input[type="text"] {
+    input[type="text"],
+    select {
       font-size: ($base * 2);
       line-height: ($base * 3);
       width: 30%;
 
       #side-sortables & {
         display: block;
-        width: 100%;
-      }
-    }
-
-    select {
-      width: 30%;
-
-      #side-sortables & {
         width: 100%;
       }
     }
