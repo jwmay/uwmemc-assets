@@ -44,5 +44,35 @@
         width: 100%;
       }
     }
+  
+    &.input-group-full {
+
+      label {
+        display: block;
+        width: 42%;
+        margin-bottom: $base;
+      }
+      
+      textarea {
+        width: 42%;
+        font-size: ($base * 2);
+        padding: $base;
+      }
+    }
+
+    .help-text {
+      display: block;
+      width: 100%;
+      color: $dark-gray;
+      font-size: ($base * 1.75);
+      font-style: italic;
+      font-weight: $global-weight-normal;
+      margin-left: 40px;
+    }
+  }
+
+  hr {
+    margin-top: ($base * 4);
+    margin-bottom: ($base * 2);
   }
 }
