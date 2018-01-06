@@ -454,9 +454,9 @@ $label-background: $primary-color;
 $label-color: $white;
 $label-color-alt: $black;
 $label-palette: $foundation-palette;
-$label-font-size: 0.8rem;
-$label-padding: 0.33333rem 0.5rem;
-$label-radius: $global-radius;
+$label-font-size: 1rem; // custom
+$label-padding: 0.4rem 0.75rem;
+$label-radius: 16px; // custom
 
 // 22. Media Object
 // ----------------
