@@ -21,7 +21,7 @@
       font-weight: $global-weight-bold;
       font-size: ($base * 2);
       display: inline-block;
-      width: 12%;
+      width: 20%;
 
       svg {
         margin: 0 $base;
@@ -49,12 +49,12 @@
 
       label {
         display: block;
-        width: 42%;
+        width: 50%;
         margin-bottom: $base;
       }
       
       textarea {
-        width: 42%;
+        width: 50%;
         font-size: ($base * 2);
         padding: $base;
       }
@@ -67,7 +67,7 @@
       font-size: ($base * 1.75);
       font-style: italic;
       font-weight: $global-weight-normal;
-      margin-left: 40px;
+      margin-left: 34px;
     }
   }
 
