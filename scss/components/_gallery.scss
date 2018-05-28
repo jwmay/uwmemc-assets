@@ -56,6 +56,7 @@
 @mixin gallery-dot-img($size) {
   border-radius: 100%;
   height: ($base * $size);
+  width: auto;
 }
 
 // Generate a gallery-dot header.

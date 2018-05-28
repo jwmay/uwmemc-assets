@@ -29,7 +29,10 @@
   }
 
   .team-member-portrait {
-    @include gallery-dot-img(20);
+    
+    img {
+      @include gallery-dot-img(20);
+    }
   }
 
   .team-member-name {

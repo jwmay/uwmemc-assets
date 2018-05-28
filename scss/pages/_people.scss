@@ -73,6 +73,11 @@
       }
     }
 
+    .member-title {
+      font-weight: $global-weight-bold;
+      line-height: 1.4rem;
+    }
+
     .member-research {
       margin-top: ($base * 2);
       text-align: left;
