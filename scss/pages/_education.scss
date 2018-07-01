@@ -1,0 +1,16 @@
+////
+// Education page styles
+////
+.reu-application-link {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint(medium) {
+    width: 75%;
+  }
+
+  @include breakpoint(large) {
+    width: 50%;
+  }
+}
