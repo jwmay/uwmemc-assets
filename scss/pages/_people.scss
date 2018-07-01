@@ -1,6 +1,8 @@
 ////
-// People page styles
+// People-related page styles
 ////
+
+// Styles for the directory page containing all people
 .directory {
   @include gallery;
 
@@ -21,8 +23,12 @@
       border-bottom: 8px dotted $warning-color;
     }
   }
+}
 
-  .member-content {
+
+// Styles for displaying information about a single person
+.member {
+  .member-container {
     @include tile-container($padding: ($base * 6));
     padding-left: ($base * 4);
     padding-right: ($base * 4);
@@ -41,6 +47,11 @@
       text-align: left;
       margin-right: ($base * 5);
       margin-bottom: ($base * 3);
+    }
+
+    a:hover {
+      border: none;
+      animation: none;
     }
 
     img {
@@ -62,40 +73,39 @@
       display: block;
       width: auto;
     }
-  
-    .member-name {
+  }
+
+  .member-name {
+    margin: 0;
+    margin-top: ($base * 2);
+
+    @include breakpoint(large) {
       margin: 0;
-      margin-top: ($base * 2);
+      margin-bottom: $base;
+    }
 
-      @include breakpoint(large) {
-        margin: 0;
-        margin-bottom: $base;
+    a {
+      color: $success-color;
+
+      &:hover {
+        animation: none;
+        color: $success-color;
       }
-    }
+    } 
+  }
 
-    .member-title {
-      font-weight: $global-weight-bold;
-      line-height: 1.4rem;
-    }
+  .member-title {
+    font-weight: $global-weight-bold;
+    line-height: 1.4rem;
+  }
 
-    .member-research {
-      margin-top: ($base * 2);
-      text-align: left;
-    }
+  .member-research {
+    margin-top: ($base * 2);
+    text-align: left;
+  }
 
-    .spacer {
-      height: 100%;
-      margin: 0 ($base * 1.75);
-      border-left: 2px dotted $primary-color;
-      
-      @include breakpoint(medium) {
-        border-left: 4px dotted $primary-color;
-      }
-    }
-  
-    .member-tags {
-      margin-bottom: ($base * 2);
-    }
+  .member-tags {
+    margin-bottom: ($base * 2);
   }
 
   .label {
@@ -104,17 +114,68 @@
     font-weight: $global-weight-bold;
     margin-right: $base;
     margin-bottom: $base;
-
+  
     &.label-irg-1 {
       background-color: $warning-color;
     }
-
+  
     &.label-irg-2 {
       background-color: $alert-color;
     }
-
+  
     &.label-department {
       background-color: $secondary-color;
     }
+  }
+}
+
+
+// Styles for an inline spacer
+.spacer {
+  height: 100%;
+  margin: 0 ($base * 1.75);
+  border-left: 2px dotted $primary-color;
+  
+  @include breakpoint(medium) {
+    border-left: 4px dotted $primary-color;
+  }
+}
+
+
+// Styles for displaying an individual person on a single page
+.person {
+  text-align: center;
+
+  @include breakpoint(large) {
+    text-align: left;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+
+    .person-left-panel {
+      flex: 0 0 35%;
+      padding-right: ($base * 3);
+      margin-right: ($base * 3);
+      border-right: 4px dotted $primary-color;
+    }
+  }
+
+  .member-image {
+    margin-bottom: ($base * 4);
+  }
+
+  .member-title {
+    font-size: 1.4rem;
+    margin-bottom: ($base * 3);
+  }
+
+  .member-links {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    margin-bottom: ($base * 3);
+  }
+
+  .member-research {
+    text-align: left;
   }
 }
