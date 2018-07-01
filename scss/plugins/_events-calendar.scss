@@ -372,7 +372,7 @@ table.tribe-events-calendar
   background: $secondary-color;
 }
 
-// Style the hovor effects of links for featured events displayed on the calendar
+// Style the hover effects of links for featured events displayed on the calendar
 #tribe-events-content
 table.tribe-events-calendar
 .type-tribe_events.tribe-event-featured
@@ -391,6 +391,8 @@ a:hover {
     .entry-title {
       color: $primary-color;
       font-weight: $global-weight-bold;
+      font-size: ($base * 3);
+      margin-top: 0;
     }
     
     .tribe-event-duration {
