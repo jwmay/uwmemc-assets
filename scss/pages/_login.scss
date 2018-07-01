@@ -135,11 +135,10 @@ body.login {
 			}
 		}
 		
-		// Hide the 'Back to blog' link.
-		p#backtoblog {
-			a {
-				display: none;
-			}
+		// Hide the 'Back to blog' and 'Privacy Policy' links.
+		p#backtoblog,
+		div.privacy-policy-page-link {
+			display: none;
 		}
 		
 		// Style navigation links at bottom of login form.
