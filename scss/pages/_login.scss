@@ -13,7 +13,7 @@ body.login {
 
 	@include breakpoint(medium) {
     &:after {
-		  background: url('../img/backgrounds/solar-panel-gradient.png') no-repeat center center fixed;
+		  background: url($solar-panel-image) no-repeat center center fixed;
       background-size: cover;
       opacity: 0.2;
       position: absolute;
